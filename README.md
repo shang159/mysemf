@@ -1,0 +1,2 @@
+# mysemf
+ learn django
