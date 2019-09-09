@@ -23,5 +23,5 @@ urlpatterns = [
     url('vuln/',include("vuln.urls")),
     url('asset/',include("asset.urls")),
     url("",include("dashboard.urls")),
-    url('dashboard/',include("dashboard.urls"))
+    url('dashboard/',include("dashboard.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

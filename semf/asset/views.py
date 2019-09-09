@@ -11,19 +11,20 @@ import uuid
 import json,time,random
 from django.utils.html import escape
 # Create your views here.
+
 def list(request):
     query_data=Asset.objects.all().values()
     return render_to_response("./asset/list.html", locals())
 
 @login_required
 @csrf_protect
-def asset_create(request):
+def add(request):
     user = request.user
     error = ''
     if request.method == 'POST':
         form = forms.Asset_create_form(request.POST)
         if form.is_valid():
-            asset_id = settings.Vuln_prefied + uuid.uuid4()
+            asset_id = settings.VULN_PRE + str(uuid.uuid4())
             asset_name = form.cleaned_data['asset_name']
             asset_type = form.cleaned_data['asset_type']
             asset_key = form.cleaned_data['asset_key']
@@ -57,7 +58,7 @@ def asset_create(request):
             error = '添加成功'
         else:
             error ='非法输入或资产已存在，请进行资产申请'
-        return render(request,'formedit.html',{'form':form,'post_url':'assetcreate','error':error})
+        return render(request,'./asset/add.html',{'form':form,'post_url':'add','error':error})
     else:
         form = forms.Asset_create_form()
-    return render(request,'formedit.html',{'form':form,'post_url':'assetcreate'})
+    return render(request,'./asset/add.html',{'form':form,'post_url':'assetcreate'})
