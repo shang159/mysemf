@@ -1,9 +1,11 @@
 
 from django.conf.urls import url,include
-from .views import list
+from .views import list,add
 
 
 urlpatterns = [
-    url('list/', list,name='list'),
+    url('add/',add,name='add'),
     url('', list,name='list'),
+    url('list/', list,name='list'),
+
 ]

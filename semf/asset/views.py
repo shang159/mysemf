@@ -11,7 +11,7 @@ import uuid
 import json,time,random
 from django.utils.html import escape
 # Create your views here.
-
+@login_required
 def list(request):
     query_data=Asset.objects.all().values()
     return render_to_response("./asset/list.html", locals())

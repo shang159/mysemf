@@ -14,5 +14,6 @@ class Asset(models.Model):
     user_email = models.EmailField('联系人邮箱', null=True, blank=True)
     asset_user = models.ManyToManyField(User, related_name='asset_to_user', blank=True)
 
+
     def __str__(self):
         return self.asset_key
