@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url,include
-from vuln.urls import list
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     url('admin/', admin.site.urls),
     url('vuln/',include("vuln.urls")),
+    url('asset/',include("asset.urls")),
+    url("",include("dashboard.urls")),
+    url('dashboard/',include("dashboard.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

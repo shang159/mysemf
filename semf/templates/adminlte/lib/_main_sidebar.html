@@ -1,0 +1,46 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+
+{% block nav_links %}
+    <li>
+        <a href="/dashboard/">
+            <i class="fa fa-dashboard"></i> <span>首页</span>
+        </a>
+    </li>
+    <li class="treeview">
+                    <a href="/vuln/">
+                        <i class="fa fa-book"></i> <span>资产管理</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="/asset/list/">
+                                <i class="fa fa-table"></i> 资产列表
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-table"></i> 新建资产
+                            </a>
+                        </li>
+                    </ul>
+    </li>
+    <li class="treeview">
+                    <a href="/vuln/">
+                        <i class="fa fa-book"></i> <span>漏洞管理</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="/vuln/list">
+                                <i class="fa fa-table"></i> 漏洞列表
+                            </a>
+                        </li>
+                    </ul>
+    </li>
+{% endblock nav_links %}

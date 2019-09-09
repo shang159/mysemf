@@ -1,0 +1,41 @@
+{% extends "adminlte/base.html" %}
+{% block title %} 资产列表{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+
+<div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tbody><tr>
+                  <th>系统编号</th>
+                  <th>资产名称</th>
+                  <th>资产类型</th>
+                  <th>唯一标记</th>
+                  <th>生产线</th>
+					<th>联系人邮箱</th>
+                  <th>添加时间</th>
+                  <th>更新时间</th>
+
+
+                </tr>
+				{% for data in query_data%}
+                <tr>
+                  <td>{{ data.asset_id }}</td>
+                  <td>{{ data.asset_name }}</td>
+                  <td>{{ data.asset_type}}</td>
+                  <td>{{ data.asset_key }}</td>
+                  <td>{{ data.asset_link }}</td>
+                  <td>{{ data.user_email }}</td>
+                  <td>{{ data.asset_starttime }}</td>
+                  <td>{{ data.asset_updatetime }}</td>
+					<td>
+						<div class="layui-btn-group">
+							<a class="layui-btn layui-btn-xs" lay-event="edit"><i class="fa fa-edit"></i>修改</a>
+							<a class="layui-btn layui-btn-xs" lay-event="detail"><i class="fa fa-eye"></i>详情</a>
+						</div>
+					</td>
+                </tr>
+				{% endfor %}
+              </tbody></table>
+            </div>
+{% endblock %}

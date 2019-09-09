@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_adminlte',
+    'django_adminlte_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vuln',
+    'asset',
+    'dashboard'
+
 ]
 
 MIDDLEWARE = [
@@ -125,3 +130,5 @@ STATICFILES_DIRS=(BASE_DIR,'static')
 MEDIA_ROOT = MEDIA_DIR
 
 MEDIA_URL = '/media/'
+
+Vuln_prefied="Tujia"
